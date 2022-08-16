@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="lineScript.js"></script>
+  <title>Line Program</title>
+</head>
+<body>
+    
+
+    <label for="program">Select a program:</label>
+    <select name="program" id="program">
+        <option value="T1XX" id="T1XX">T1XX</option>
+        <option value="LA" id="LA">LA/RU/UF</option>
+        <option value="DT" id="DT">DT</option>
+        <option value="WS/WL" id="WS/WL">WS/WL</option>
+        <option value="Toyota" id="Toyota">Toyota</option>
+        <option value="VN" id="VN">VN</option>
+    </select>
+
+        <label for="totes">Number of Totes:</label>
+        <input type="number" id="numTotes">
+    
+        <label for="rack">Hook Number:</label>
+        <input type="number" id="rackStart">
+
+    <button id="calculate" onclick="flagNum();">Calculate</button>
+        <label for="flag">Flag Position:</label>
+        <p id="flag"></p>
+</body>
+</html>
