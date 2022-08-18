@@ -9,22 +9,41 @@
 <body>
     
 
-    <label for="program">Select a program:</label>
+    <label for="program">Programs:</label>
     <select name="program" id="program">
+        <option value="Unselected"></option>
         <option value="T1XX" id="T1XX">T1XX</option>
         <option value="LA" id="LA">LA/RU/UF</option>
         <option value="DT" id="DT">DT</option>
         <option value="WS/WL" id="WS/WL">WS/WL</option>
         <option value="Toyota" id="Toyota">Toyota</option>
-        <option value="VN" id="VN">VN</option>
+        <option value="C1YB" id="C1YB">C1YB</option>
+        <option value="C1TL" id="C1TL">C1TL</option>
+        <option value="Mustand" id="Mustang">Mustang</option>
+        <option value="Rivian" id="Rivian">Rivian</option>
     </select>
-<br>
+    
+    <label for="serviceBuilds">Service Builds:</label>
+    <select name="service" id="service">
+        <option value="Unselected"></option>
+        <option value="VN" id="VN">VN</option>
+        <option value="Nissan" id="Nissan">Nissan</option>
+        <option value="U502" id="U502">U502</option>
+        <option value="Honda" id="Honda">Honda</option>
+        <option value="Acura" id="Acura">Acura</option>
+        <option value="K2XX" id="K2XX">K2XX</option>
+        <option value="T800" id="T800">T800</option>
+        <option value="T900" id="T900">T900</option>
+        <option value="U387" id="U387">U387</option>
+        <option value="U388" id="U388">U388</option>
+    </select>
+
         <label for="totes">Number of Totes:</label>
         <input type="number" id="numTotes">
-    <br>
+    
         <label for="rack">Hook Number:</label>
         <input type="number" id="rackStart">
-<br>
+
     <button id="calculate" onclick="flagNum();">Calculate</button>
         <label for="flag">Flag Position:</label>
         <p id="flag"></p>
