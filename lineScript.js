@@ -1,5 +1,5 @@
 
-var amntPerTote = [30, 24, 14, 5];
+var amntPerTote = [30, 24, 12, 5];
 var amntPerRack = [16, 12, 8, 6];
 var partsInTote;
 var spacesOnRack;
