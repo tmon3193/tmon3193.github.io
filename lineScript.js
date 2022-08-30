@@ -71,7 +71,14 @@ function flagNum() {
         let flag = Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + parseInt(firstRack);
         if (flag > 72) flag = flag - 72;
         document.getElementById("flag").value = flag;
-    }
+    
+    } else if (document.getElementById("U502").selected){
+        let partsInTote = amntPerTote[1];
+        let flag = Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + parseInt(firstRack);
+        if (flag > 72) flag = flag - 72;
+        document.getElementById("flag").value = flag;
+    
+     }
     
 }
 
