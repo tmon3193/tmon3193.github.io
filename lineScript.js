@@ -33,6 +33,7 @@ function flagNum() {
         document.getElementById("flag").value = flag;
         
     } else if (document.getElementById("WS/WL").selected){
+        let partsInTote = amntPerTote[1];
         let flag = Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + parseInt(firstRack);     
         if (flag > 72) flag = flag - 72;
         document.getElementById("flag").value = flag;
