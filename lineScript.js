@@ -25,6 +25,11 @@ function flagNum() {
         let flag = Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + parseInt(firstRack);
         if (flag > 72) flag = flag - 72;
         document.getElementById("flag").value = flag;
+
+    } else if (document.getElementById("C1YB").selected){
+        let flag = Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + parseInt(firstRack);
+        if (flag > 72) flag = flag - 72;
+        document.getElementById("flag").value = flag;
         
     } else if (document.getElementById("DT").selected){
         let partsInTote = amntPerTote[1];
