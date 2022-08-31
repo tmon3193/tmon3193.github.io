@@ -65,6 +65,8 @@ function flagNum() {
         if (flag > 72) flag = flag - 72;
         document.getElementById("flag").value = flag;
         
+/*Service Builds*/
+
     } else if (document.getElementById("VN").selected){
         let partsInTote = amntPerTote[3];
         let spacesOnRack = amntPerRack[2];
@@ -78,7 +80,7 @@ function flagNum() {
         if (flag > 72) flag = flag - 72;
         document.getElementById("flag").value = flag;
     
-     }
+    }
     
 }
 
