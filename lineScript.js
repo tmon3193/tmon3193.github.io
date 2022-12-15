@@ -4,7 +4,7 @@ var amntPerRack = [16, 12, 8, 6];
 var partsInTote;
 var spacesOnRack;
 var flag;
-var numTotes;
+var numTotes = 16;
 
 /*Calculate how many parts are in the totes as well as the parts on the rack*/
 
