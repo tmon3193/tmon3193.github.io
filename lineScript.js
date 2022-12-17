@@ -6,7 +6,7 @@ var spacesOnRack;
 var flag;
 var numTotes = 16;
 
-/*Calculate how many parts are in the totes as well as the parts on the rack*/
+//Calculate how many parts are in the totes as well as the parts on the rack
 
 function flagNum() {
 
@@ -70,7 +70,7 @@ function flagNum() {
         if (flag > 72) flag = flag - 72;
         document.getElementById("flag").value = flag;
         
-/*Service Builds*/
+//Service Builds
 
     } else if (document.getElementById("VN").selected){
         let partsInTote = amntPerTote[3];
