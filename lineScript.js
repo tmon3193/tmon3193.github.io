@@ -1,91 +1,40 @@
+const amountsPerTote = [30, 24, 12, 5];
+const amountsPerRack = [16, 12, 8, 6];
 
-var amntPerTote = [30, 24, 12, 5];
-var amntPerRack = [16, 12, 8, 6];
-var partsInTote;
-var spacesOnRack;
-var flag;
-var numTotes = 16;
-
-//Calculate how many parts are in the totes as well as the parts on the rack
-
-function flagNum() {
-
-    let totalTotes = document.getElementById("numTotes").value;
-    let firstRack = document.getElementById("rackStart").value;
-    let partsInTote = amntPerTote[0];
-    let spacesOnRack = amntPerRack[0];
-    
-
-    if (document.getElementById("T1XX").selected){
-        let flag = Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + parseInt(firstRack);
-        if (flag > 72) flag = flag - 72;
-        document.getElementById("flag").value = flag;
-        
-    } else if (document.getElementById("LA").selected){
-        let flag = Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + parseInt(firstRack);
-        if (flag > 72) flag = flag - 72;
-        document.getElementById("flag").value = flag;
-
-    } else if (document.getElementById("C1YB").selected){
-        let flag = Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + parseInt(firstRack);
-        if (flag > 72) flag = flag - 72;
-        document.getElementById("flag").value = flag;
-        
-    } else if (document.getElementById("DT").selected){
-        let partsInTote = amntPerTote[1];
-        let flag = Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + parseInt(firstRack);
-        if (flag > 72) flag = flag - 72;
-        document.getElementById("flag").value = flag;
-        
-    } else if (document.getElementById("WS/WL").selected){
-        let partsInTote = amntPerTote[1];
-        let flag = Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + parseInt(firstRack);     
-        if (flag > 72) flag = flag - 72;
-        document.getElementById("flag").value = flag;
-        
-    } else if (document.getElementById("Toyota").selected){
-        let partsInTote = amntPerTote[2];
-        let spacesOnRack = amntPerRack[1];
-        let flag = Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + parseInt(firstRack); 
-        if (flag > 72) flag = flag - 72;
-        document.getElementById("flag").value = flag;
-        
-    } else if (document.getElementById("C1TL").selected){
-        let partsInTote = amntPerTote[1];
-        let spacesOnRack = amntPerRack[2];
-        let flag = Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + parseInt(firstRack);  
-        if (flag > 72) flag = flag - 72;
-        document.getElementById("flag").value = flag;
-        
-    } else if (document.getElementById("Mustang").selected){
-        let spacesOnRack = amntPerRack[3];
-        let flag = Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + parseInt(firstRack);      
-        if (flag > 72) flag = flag - 72;
-        document.getElementById("flag").value = flag;
-        
-    } else if (document.getElementById("Rivian").selected){
-        let spacesOnRack = amntPerRack[2];
-        let partsInTote = amntPerTote[1];
-        let flag = Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + parseInt(firstRack);        
-        if (flag > 72) flag = flag - 72;
-        document.getElementById("flag").value = flag;
-        
-//Service Builds
-
-    } else if (document.getElementById("VN").selected){
-        let partsInTote = amntPerTote[3];
-        let spacesOnRack = amntPerRack[2];
-        let flag = Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + parseInt(firstRack);
-        if (flag > 72) flag = flag - 72;
-        document.getElementById("flag").value = flag;
-    
-    } else if (document.getElementById("U502").selected){
-        let partsInTote = amntPerTote[1];
-        let flag = Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + parseInt(firstRack);
-        if (flag > 72) flag = flag - 72;
-        document.getElementById("flag").value = flag;
-    
-    }
-    
+function calculateFlagNumber(totalTotes, firstRack, partsInTote, spacesOnRack) {
+  return Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + parseInt(firstRack);
 }
 
+function flagNum() {
+  const totalTotes = document.querySelector("#numTotes").value;
+  const firstRack = document.querySelector("#rackStart").value;
+  let partsInTote = amountsPerTote[0];
+  let spacesOnRack = amountsPerRack[0];
+
+  switch (document.querySelector("#flagType").value) {
+    case "T1XX":
+    case "LA":
+    case "C1YB":
+      break;
+    case "DT":
+    case "WS/WL":
+    case "C1TL":
+      partsInTote = amountsPerTote[1];
+      break;
+    case "Toyota":
+      partsInTote = amountsPerTote[2];
+      spacesOnRack = amountsPerRack[1];
+      break;
+    case "Mustang":
+      spacesOnRack = amountsPerRack[3];
+      break;
+    case "Rivian":
+      partsInTote = amountsPerTote[1];
+      spacesOnRack = amountsPerRack[2];
+      break;
+  }
+
+  let flag = calculateFlagNumber(totalTotes, firstRack, partsInTote, spacesOnRack);
+  if (flag > 72) flag = flag - 72;
+  document.querySelector("#flag").value = flag;
+}
