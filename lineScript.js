@@ -11,7 +11,7 @@ function flagNum() {
   let partsInTote = amountsPerTote[0];
   let spacesOnRack = amountsPerRack[0];
 
-  switch (document.querySelector("#flagType").value) {
+  switch (document.querySelector("#program").value) {
     case "T1XX":
     case "LA":
     case "C1YB":
