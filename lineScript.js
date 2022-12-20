@@ -6,7 +6,7 @@ function calculateFlagNumber(totalTotes, firstRack, partsInTote, spacesOnRack) {
 }
 
 function flagNum() {
-  const totalTotes = document.querySelector("#numTotes");
+  const totalTotes = document.querySelector("#numTotes").value;
   const firstRack = document.querySelector("#rackStart").value;
   let partsInTote = amountsPerTote[0];
   let spacesOnRack = amountsPerRack[0];
