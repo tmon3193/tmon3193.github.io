@@ -2,12 +2,12 @@ const amountsPerTote = [30, 24, 12, 5];
 const amountsPerRack = [16, 12, 8, 6];
 
 function calculateFlagNumber(totalTotes, firstRack, partsInTote, spacesOnRack) {
-  return Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + parseInt(firstRack);
+  return Math.ceil(partsInTote * totalTotes / spacesOnRack) + 1 + (firstRack);
 }
 
 function flagNum() {
-  const totalTotes = document.querySelector("#numTotes").value;
-  const firstRack = document.querySelector("#rackStart").value;
+  const totalTotes = parseInt(document.querySelector("#numTotes").value);
+  const firstRack = parseInt(document.querySelector("#rackStart").value);
   let partsInTote = amountsPerTote[0];
   let spacesOnRack = amountsPerRack[0];
 
